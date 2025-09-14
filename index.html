@@ -21,6 +21,12 @@
       display: none;
       margin-top: 20px;
     }
+    #new-text {
+      display: none;
+      margin-top: 15px;
+      font-size: 1.2rem;
+      color: #0f0;
+    }
     input[type="password"] {
       padding: 10px;
       font-size: 1rem;
@@ -47,16 +53,13 @@
   <script>
     function checkPassword(event) {
       event.preventDefault();
-      var pw = document.getElementById('password').value.toLowerCase(); // convert input to lowercase
+      var pw = document.getElementById('password').value;
       var error = document.getElementById('error');
       var gif = document.getElementById('gif');
       var oldMessage = document.getElementById('message');
       var newText = document.getElementById('new-text');
 
-      // define allowed passwords, all lowercase
-      var validPasswords = ["love", "LOVE"];
-      
-      if (pw === "LOVE") {
+      if (pw === "yourPassword") {
         // Hide the initial message and form
         oldMessage.style.display = "none";
         document.getElementById('pw-form').style.display = "none";
@@ -66,7 +69,7 @@
         gif.style.display = "block";
         error.textContent = "";
       } else {
-        error.textContent = "Incorrect password.";
+        error.textContent = "Incorrect password. Try again!";
       }
     }
   </script>
@@ -74,8 +77,8 @@
 <body>
   <div class="container">
     <div id="message">
-      <h2>Hello.</h2>
-      <p>We are your future selves and we have been watching you... waiting for you.</br>But you are running out of time. You are closer than ever before to saving your race.</br>Look back on the events of tonight. The true answer may have been</br>closer to your hearts than you previously thought.</p>
+      <h2>Welcome to Our Event!</h2>
+      <p>Please enter the password to reveal your surprise:</p>
     </div>
     <form id="pw-form" onsubmit="checkPassword(event)">
       <input type="password" id="password" placeholder="Enter password" autocomplete="off">
@@ -84,7 +87,7 @@
       <div class="error" id="error"></div>
     </form>
     <div id="new-text">
-      <p>You have successfully saved your race by discovering a coincidentally,</br>identically appearing Earth 2.0! Congratulations!</br>Thank you for coming to the party!</p>
+      <p>Access granted! Enjoy the event surprise below:</p>
     </div>
     <div id="gif">
       <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Rotating_earth_animated.gif?20201022124721" alt="Event GIF" style="width:300px;">

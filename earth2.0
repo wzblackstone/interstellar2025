@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>Password Entry</title>
 </head>
 <body>
-  <p>Congratulations!</p> 
+  <form>
+    <label for="password">Enter Password:</label>
+    <input type="password" id="password" name="password">
+    <button type="submit">Submit</button>
+  </form>
 </body>
 </html>

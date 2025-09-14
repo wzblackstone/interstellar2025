@@ -1,13 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Password Entry</title>
+  <meta charset="UTF-8">
+  <title>Event Access</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      text-align: center;
+    }
+    #gif {
+      display: none;
+      margin-top: 20px;
+    }
+    input[type="password"] {
+      padding: 10px;
+      font-size: 1rem;
+      margin: 5px 0;
+      border-radius: 5px;
+      border: none;
+      width: 200px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: none;
+      background: #333;
+      color: #fff;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .error {
+      color: #ff5555;
+      margin-top: 10px;
+    }
+  </style>
+  <script>
+    function checkPassword(event) {
+      event.preventDefault();
+      var pw = document.getElementById('password').value;
+      var error = document.getElementById('error');
+      var gif = document.getElementById('gif');
+      if (pw === "LOVE") {
+        document.getElementById('pw-form').style.display = "none";
+        gif.style.display = "block";
+        error.textContent = "";
+      } else {
+        error.textContent = "Incorrect password.";
+      }
+    }
+  </script>
 </head>
 <body>
-  <form>
-    <label for="password">Enter Password:</label>
-    <input type="password" id="password" name="password">
-    <button type="submit">Submit</button>
-  </form>
+  <div class="container">
+    <div id="message">
+      <h2>Hello.</h2>
+      <p>We are your future selves and we have been watching you... waiting for you.</br>But you are running out of time. You are closer than ever before to saving your race.</br>Look back on the events of tonight. The true answer may have been</br>closer to your hearts than you previously thought.</p>
+    </div>
+    <form id="pw-form" onsubmit="checkPassword(event)">
+      <input type="password" id="password" placeholder="Enter password" autocomplete="off">
+      <br>
+      <button type="submit">Submit</button>
+      <div class="error" id="error"></div>
+    </form>
+    <div id="gif">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Rotating_earth_animated.gif?20201022124721" alt="Event GIF" style="width:300px;">
+    </div>
+  </div>
 </body>
 </html>

@@ -47,11 +47,22 @@
   <script>
     function checkPassword(event) {
       event.preventDefault();
-      var pw = document.getElementById('password').value;
+      var pw = document.getElementById('password').value.toLowerCase(); // convert input to lowercase
       var error = document.getElementById('error');
       var gif = document.getElementById('gif');
+      var oldMessage = document.getElementById('message');
+      var newText = document.getElementById('new-text');
+
+      // define allowed passwords, all lowercase
+      var validPasswords = ["love", "LOVE"];
+      
       if (pw === "LOVE") {
+        // Hide the initial message and form
+        oldMessage.style.display = "none";
         document.getElementById('pw-form').style.display = "none";
+
+        // Show the new text and gif
+        newText.style.display = "block";
         gif.style.display = "block";
         error.textContent = "";
       } else {

@@ -72,6 +72,13 @@
         newText.style.display = "block";
         gif.style.display = "block";
         error.textContent = "";
+        // Change background image, make sure link is correct
+        document.body.style.backgroundImage = "url(photo-1475274047050-1d0c0975c63e.jpg)";
+        // For full coverage
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundRepeat = "no-repeat";
+        document.body.style.backgroundPosition = "center";
+        document.body.style.backgroundAttachment = "fixed";
       } else {
         error.textContent = "Incorrect password. Try again!";
       }

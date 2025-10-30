@@ -53,7 +53,7 @@
       color: #ff5555;
       margin-top: 10px;
     }
-    <audio id="bg-music" src="YMCA.mp3" preload="auto"></audio>
+    <audio id="bg-music" src="your-music-file.mp3" preload="auto"></audio>
   </style>
   <script>
     function checkPassword(event) {
@@ -68,7 +68,7 @@ music.play().catch(function(error) {
   console.log("Audio playback prevented:", error);
 });
 
-      if (pw === "349") {
+      if (pw === "yourPassword") {
         // Hide the initial message and form
         oldMessage.style.display = "none";
         document.getElementById('pw-form').style.display = "none";
@@ -80,7 +80,7 @@ music.play().catch(function(error) {
         // Change background image, make sure link is correct
         document.body.style.backgroundImage = "url(photo-1475274047050-1d0c0975c63e.jpg)";
         // For full coverage
-        document.body.style.background = "cover";
+        document.body.style.backgroundSize = "cover";
         document.body.style.backgroundRepeat = "no-repeat";
         document.body.style.backgroundPosition = "center";
         document.body.style.backgroundAttachment = "fixed";
@@ -102,7 +102,7 @@ music.play().catch(function(error) {
       <h1 style="text-color:white;">***TRANSMISSION LOST***</h1>
     </div>
     <form id="pw-form" onsubmit="checkPassword(event)">
-      <input type="password" id="password" placeholder="Enter Three-Number Code" autocomplete="off">
+      <input type="password" id="password" placeholder="Enter Four-Number Code" autocomplete="off">
       <br>
       <button type="submit">Submit</button>
       <div class="error" id="error"></div>

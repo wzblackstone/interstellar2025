@@ -53,6 +53,7 @@
       color: #ff5555;
       margin-top: 10px;
     }
+    <audio id="bg-music" src="your-music-file.mp3" preload="auto"></audio>
   </style>
   <script>
     function checkPassword(event) {
@@ -62,6 +63,10 @@
       var gif = document.getElementById('gif');
       var oldMessage = document.getElementById('message');
       var newText = document.getElementById('new-text');
+      var music = document.getElementById('bg-music');
+music.play().catch(function(error) {
+  console.log("Audio playback prevented:", error);
+});
 
       if (pw === "yourPassword") {
         // Hide the initial message and form

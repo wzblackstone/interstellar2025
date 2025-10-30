@@ -63,10 +63,6 @@
       var gif = document.getElementById('gif');
       var oldMessage = document.getElementById('message');
       var newText = document.getElementById('new-text');
-      var music = document.getElementById('bg-music');
-music.play().catch(function(error) {
-  console.log("Audio playback prevented:", error);
-});
 
       if (pw === "yourPassword") {
         // Hide the initial message and form
@@ -77,6 +73,11 @@ music.play().catch(function(error) {
         newText.style.display = "block";
         gif.style.display = "block";
         error.textContent = "";
+        // Play music
+         var music = document.getElementById('bg-music');
+music.play().catch(function(error) {
+  console.log("Audio playback prevented:", error);
+});
         // Change background image, make sure link is correct
         document.body.style.backgroundImage = "url(photo-1475274047050-1d0c0975c63e.jpg)";
         // For full coverage

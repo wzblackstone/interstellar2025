@@ -53,7 +53,6 @@
       color: #ff5555;
       margin-top: 10px;
     }
-    <audio id="bg-music" src="your-music-file.mp3" preload="auto"></audio>
   </style>
   <script>
     function checkPassword(event) {
@@ -73,10 +72,6 @@
         newText.style.display = "block";
         gif.style.display = "block";
         error.textContent = "";
-        // Play music
-         var music = document.getElementById('bg-music');
-music.play().catch(function(error) {
-  console.log("Audio playback prevented:", error);
         // Change background image, make sure link is correct
         document.body.style.backgroundImage = "url(photo-1475274047050-1d0c0975c63e.jpg)";
         // For full coverage
